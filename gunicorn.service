@@ -1,0 +1,14 @@
+[Unit]
+Description=demo fastapi application
+After=network.target
+
+[Service]
+User=voron
+Group=voron
+WorkingDirectory=/home/voron/app/src/example-fastapi/
+Environment="PATH=/home/voron/app/venv/bin"
+EnvironmentFile=/home/voron/.env
+ExecStart=/home/voron/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
