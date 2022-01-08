@@ -1,4 +1,4 @@
-FROM python:3.9.7
+FROM python:3
 # base image
 WORKDIR /usr/src/app
 # optional, working directory, 
