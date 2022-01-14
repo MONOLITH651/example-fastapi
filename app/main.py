@@ -32,7 +32,7 @@ app.include_router(vote.router)
 
 @app.get("/") 
 def root():
-    return {"message": "Ircya-Kaban4uk"}
+    return {"message": "Ircya-Kaban4uk, DYZHE"}
 
 
 
