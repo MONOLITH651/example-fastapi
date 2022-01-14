@@ -10,7 +10,7 @@ import pytest
 def test_root(client):
     res = client.get("/")
     print(res.json().get("message"))
-    assert res.json().get("message") == 'Ircya-Kaban4uk'
+    assert res.json().get("message") == 'Ircya-Kaban4uk, DYZHE'
     assert res.status_code == 200
 
 
