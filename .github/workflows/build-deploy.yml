@@ -80,13 +80,13 @@ jobs:
       - name: deploy to ubuntu server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{sercrets.PROD_HOST}}
+          host: ${{secrets.PROD_HOST}}
           username: ${{secrets.PROD_USERNAME}}
           password: ${{secrets.PROD_PASSWORD}}
           script: |
             cd app/src
             git pull
-            sudo systemctl restart api
+            echo ${{secrets.PROD_PASSWORDS}}  | sudo -S systemctl restart api
           # making deployment on ubuntu command (production)
       # login to ubuntu ssh
       # cd /app/src/
